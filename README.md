@@ -1,6 +1,7 @@
 #SimpleCaptcha2
 
 [![Build Status](https://travis-ci.org/pludoni/simple-captcha.png?branch=master)](https://travis-ci.org/pludoni/simple-captcha)
+[![Gem Version](https://badge.fury.io/rb/simple_captcha2.svg)](https://badge.fury.io/rb/simple_captcha2)
 
 SimpleCaptcha(2) is the simplest and a robust captcha plugin. Its implementation requires adding up a single line in views and in controllers/models.
 SimpleCaptcha2 is available to be used with Rails 3 + 4.
