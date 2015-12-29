@@ -1,31 +1,37 @@
 ---
 language: ruby
-script:
-    - rake test
+sudo: false
+cache: bundler
+
 rvm:
   - '1.9.3'
-  - '2.0.0'
-  - '2.1.1'
+  - '2.1'
+  - '2.2.3'
+  - 'ruby-head'
 
 env:
-  - DB=sqlite                     RAILS='~> 4.1'
-  - DB=sqlite FORMTASTIC='~> 2.2' RAILS='~> 4.1'
+  - DB=sqlite                     RAILS='~> 4.2'
+  - DB=sqlite FORMTASTIC='~> 2.2' RAILS='~> 4.2'
 
 matrix:
   include:
-    - rvm: 2.1.1
-      env: DB=mysql RAILS='4.1'
-  # include:
-  #   - rvm: 2.1.0
-  #     env: DB=posgresql RAILS='4.1'
+    - rvm: 2.2.3
+      env: DB=mysql RAILS='4.2'
   include:
-    - rvm: 2.1.1
-      env: DB=sqlite FORMTASTIC='~> 2.2' RAILS='~> 4.1'
-
+    - rvm: 2.1.0
+      env: DB=posgresql RAILS='4.1'
+  include:
+    - rvm: 2.2.3
+      env: DB=sqlite FORMTASTIC='~> 2.2' RAILS='~> 4.2'
 
 before_script:
-  - mysql -e 'create database myapp_test'
-  - psql -c 'create database myapp_test' -U postgres
-  - rake dummy:setup
-  - rake app:db:migrate
-  - rake app:db:migrate RAILS_ENV=test
+  # - mysql -e 'create database myapp_test'
+  # - psql -c 'create database myapp_test' -U postgres
+  - bundle exec rake dummy:setup
+  - bundle exec rake app:db:create
+  - bundle exec rake app:db:migrate
+  - bundle exec rake app:db:migrate RAILS_ENV=test
+
+script:
+  - bundle exec rake test
+
