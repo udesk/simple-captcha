@@ -14,14 +14,14 @@ module SimpleCaptcha
 
     module ClassMethods
       # Example:
-		  # <% form_for :post, :url => posts_path do |form| %>
-		  #   ...
-		  #   <%= form.simple_captcha :label => "Enter numbers.." %>
-		  # <% end %>
-		  #
-		  def simple_captcha(options = {})
-      	options.update :object => @object_name
-      	show_simple_captcha(objectify_options(options))
+      # <% form_for :post, :url => posts_path do |form| %>
+      #   ...
+      #   <%= form.simple_captcha :label => "Enter numbers.." %>
+      # <% end %>
+      #
+      def simple_captcha(options = {})
+        options.update :object => @object_name
+        show_simple_captcha(objectify_options(options))
       end
 
       private
@@ -31,7 +31,7 @@ module SimpleCaptcha
         end
 
         def simple_captcha_field(options={})
-          html = {:autocomplete => 'off', :required => 'required', :value => ''}
+          html = {:autocomplete => 'off', :autocorrect => 'off', :autocapitalize => 'off', :required => 'required', :value => ''}
           html.merge!(options[:input_html] || {})
           html[:placeholder] = options[:placeholder] || I18n.t('simple_captcha.placeholder')
 
