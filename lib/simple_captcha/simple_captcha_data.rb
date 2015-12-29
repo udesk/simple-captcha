@@ -15,7 +15,7 @@ module SimpleCaptcha
 
     class << self
       def get_data(key)
-        where(key: key).first || new(key: key)
+        where(key: key).first_or_initialize
       end
 
       def remove_data(key)
