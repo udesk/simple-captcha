@@ -1,11 +1,16 @@
 # Change Log
 
-## [Unreleased](https://github.com/pludoni/simple-captcha/tree/HEAD)
+## [v0.4.0](https://github.com/pludoni/simple-captcha/tree/v0.4.0) (2015-12-29)
+[Full Changelog](https://github.com/pludoni/simple-captcha/compare/v0.3.4...v0.4.0)
 
-[Full Changelog](https://github.com/pludoni/simple-captcha/compare/v0.3.4...HEAD)
+**Closed issues:**
+
+- Readability of generated image [\#19](https://github.com/pludoni/simple-captcha/issues/19)
 
 **Merged pull requests:**
 
+- Fix mass-assignment error when using protected\_attributes [\#38](https://github.com/pludoni/simple-captcha/pull/38) ([soylent](https://github.com/soylent))
+- Add autocorrect = 'off' and autocapitalize = 'off' for iPhone/iPad [\#48](https://github.com/pludoni/simple-captcha/pull/48) ([Friend-LGA](https://github.com/Friend-LGA))
 - fix no session request\(api etc\) will never delete expired captcha data [\#46](https://github.com/pludoni/simple-captcha/pull/46) ([beviz](https://github.com/beviz))
 - Remove obsolete info from README.md [\#41](https://github.com/pludoni/simple-captcha/pull/41) ([rubyconvict](https://github.com/rubyconvict))
 - Add optional possibility to generate captcha partial with HAML [\#40](https://github.com/pludoni/simple-captcha/pull/40) ([aliaksandrb](https://github.com/aliaksandrb))
